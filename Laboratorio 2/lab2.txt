@@ -1,0 +1,8 @@
+laboratorio 2
+Implementar las secciones
+
+3.4  Abstract Data Types
+3.5  Design Patterns
+       figura 19 y figura 20 son 2 ejercicios
+3.7  Un ejemplo del uso del namespace 
+3.8.2   Reducing code size through pointers
