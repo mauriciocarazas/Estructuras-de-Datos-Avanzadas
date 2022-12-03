@@ -46,24 +46,28 @@ int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	int q; // q is the number of queries
-	cin >> n >> q; // read n and q
-	for (int i = 1; i <= n; i++) cin >> a[i]; // read the array
+    cout << "Enter the number of elements in the array: "; cin >> n;
+    cout << "Enter the elements of the array: "; for (int i = 1; i <= n; i++) cin >> a[i];
+    cout << "Enter the number of queries: "; cin >> q;
 	roots[cnt++] = build(); // build the segment tree and store it in roots[1]
 
 	while (q--) { // for each query
 		int t; // t is the type of the query
-		cin >> t; // read t
+        cout << "Enter the type of the query: "; cin >> t;
 		if (t == 1) { // if the query is an update
 			int k, i, x; // k is the index of the segment tree, i is the index of the element to be updated, x is the new value of the element
-			cin >> k >> i >> x; // read k, i and x
+			cout << "Enter the index of the segment tree: "; cin >> k;
+            cout << "Enter the index of the element to be updated: "; cin >> i;
+            cout << "Enter the new value of the element: "; cin >> x;
 			roots[k] = update(roots[k], x, i); // update the segment tree and store it in roots[k]
 		} else if (t == 2) { // if the query is a merge
 			int k, l, r; // k is the index of the segment tree, l and r are the indices of the segment trees to be merged
-			cin >> k >> l >> r; // read k, l and r
+			cout << "Enter the index of the segment tree: "; cin >> k;
+            cout << "Enter the indices of the segment trees to be merged: "; cin >> l >> r;
 			cout << query(roots[k], l, r) << '\n'; // query the segment tree and print the result
 		} else {
 			int k; // k is the index of the segment tree
-			cin >> k; // read k
+            cout << "Enter the index of the segment tree : "; cin >> k;
 			roots[cnt++] = new Node(roots[k]); // copy the segment tree and store it in roots[cnt]
 		}
 	}
