@@ -41,10 +41,18 @@ ll query(Node* node, int a, int b, int l = 1, int r = n) { // query the segment 
 	int mid = (l + r) / 2; // mid of the segment
 	return query(node->l, a, b, l, mid) + query(node->r, a, b, mid + 1, r); // return the sum of the values of the left and right child
 }
+// print the tree
+void print(Node* node, int l = 1, int r = n) {
+    if (l == r) {
+        cout << node->val << " ";
+        return;
+    }
+    int mid = (l + r) / 2;
+    print(node->l, l, mid);
+    print(node->r, mid + 1, r);
+}
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
 	int q; // q is the number of queries
     cout << "Enter the number of elements in the array: "; cin >> n;
     cout << "Enter the elements of the array: "; for (int i = 1; i <= n; i++) cin >> a[i];
@@ -70,6 +78,7 @@ int main() {
             cout << "Enter the index of the segment tree : "; cin >> k;
 			roots[cnt++] = new Node(roots[k]); // copy the segment tree and store it in roots[cnt]
 		}
+        print (roots[cnt - 1]); cout << '\n';
 	}
 	return 0;
 }
