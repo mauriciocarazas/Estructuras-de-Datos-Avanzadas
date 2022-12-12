@@ -1,0 +1,3 @@
+C:/Users/mauri/Escritorio/b-link/cmake-build-debug/CMakeFiles/b-link.dir
+C:/Users/mauri/Escritorio/b-link/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mauri/Escritorio/b-link/cmake-build-debug/CMakeFiles/rebuild_cache.dir
